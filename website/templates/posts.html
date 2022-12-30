@@ -1,0 +1,52 @@
+{% extends "posts_div.html" %}
+
+{% block title %}
+    {{username}}'s Posts
+{% endblock %}
+
+{% block header %}
+    {{username}}'s posts
+{% endblock %}
+
+{% block stats %}
+  <div class="grey-bg container-fluid">
+    <br>
+    <div class="row">
+        <div class="col-xl-4 col-sm-6 col-12">
+          <div class="card border-dark">
+            <div class="card-header"><center><a href="">Posts</a></center></div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><center>{{ posts|length }}</center></li>
+            </ul>
+          </div>
+      </div>
+      <div class="col-xl-4 col-sm-6 col-12">
+          <div class="card border-dark">
+            <div class="card-header"><center><a href="/follower/{{ username }}">Followers</a></center></div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><center>{{ follower_count }}</center></li>
+            </ul>
+          </div>
+      </div>
+      <div class="col-xl-4 col-sm-6 col-12">
+          <div class="card border-dark">
+            <div class="card-header"><center><a href="/following/{{ username }}">Following</a></center></div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><center>{{ following_count }}</center></li>
+            </ul>
+          </div>
+      </div>
+    </div>
+  </div>
+
+  <br>
+{% endblock %}
+
+{% block footer %}
+  <div align="center">
+    <a href="/home"
+      ><button type="button" class="btn btn-primary btn-lg">Back</button></a
+    >
+  </div>
+  <br>
+{% endblock %}

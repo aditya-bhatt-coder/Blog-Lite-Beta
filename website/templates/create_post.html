@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Create Post
+{% endblock %}
+
+{% block content %}
+    <h1 align="center">Make a Post</h1>
+    
+    <form method="POST" enctype="multipart/form-data">
+      <textarea name="text" id="text" class="form-control"></textarea>
+      <br />
+      <center>
+        <input type="file" name="file" id="file" />
+      </center>
+      <br>
+      <div align="center">
+        <button type="submit" class="btn btn-lg btn-primary">Post</button>
+      </div>
+    </form>
+    <br />
+    <div align="center">
+      <a href="/home"
+        ><button type="button" class="btn btn-lg btn-secondary">Back</button></a
+      >
+    </div>
+{% endblock %}
